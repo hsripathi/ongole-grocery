@@ -1,0 +1,27 @@
+{
+    "FRUITS & VEGIES": {
+        "key": "fruits_veggies",
+        "description": "Fruits and Vegetables",
+        "itemLogo": "og_grocery_fruits_veggies.jpg"
+    },
+    "BABY FOODS": {
+        "key": "baby_foods",
+        "description": "Baby Foods",
+        "itemLogo": "og_grocery_fruits_veggies.jpg"
+    },
+    "BEVERAGES": {
+        "key": "bevarages",
+        "description": "Bevarages",
+        "itemLogo": "og_grocery_fruits_veggies.jpg"
+    },
+    "Dairy,Egg And Cheese": {
+        "key": "dairy",
+        "description": "Dairy,Egg And Cheese",
+        "itemLogo": "og_grocery_fruits_veggies.jpg"
+    },
+    "Pulses": {
+        "key": "pulses",
+        "description": "Pulses",
+        "itemLogo": "og_grocery_fruits_veggies.jpg"
+    }
+}
