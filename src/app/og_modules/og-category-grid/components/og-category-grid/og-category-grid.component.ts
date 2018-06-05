@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OgGroceryService } from '../../../../og_services/og-grocery/og-grocery.service';
+import { OG_SERVICES_URI } from '../../../../og_conf/og-services-conf';
 
 @Component({
   selector: 'og-category-grid',
@@ -13,18 +14,12 @@ export class OgCategoryGridComponent implements OnInit
 
   ngOnInit ()
   {
-    this.ogGroceryService.getGrocery(this.callbackHandler.bind(this));
+    this.ogGroceryService.getGrocery(OG_SERVICES_URI.getURL("getGroceryCategroy"), this.callbackHandler.bind(this));
   }
 
   public callbackHandler (_data)
   {
-    for (var key in _data)
-    {
-      if (_data.hasOwnProperty(key))
-      {
-        this.ogGroceryCategory.push(_data[ key ])
-      }
-    }
+    this.ogGroceryCategory = _data;
   }
 
 

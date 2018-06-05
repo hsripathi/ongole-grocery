@@ -7,6 +7,8 @@ import { OgModuleModule } from './og_modules/og-module.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { OgServicesModule } from './og_services/og-services.module';
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +17,8 @@ import { OgServicesModule } from './og_services/og-services.module';
     BrowserModule,
     BrowserAnimationsModule,
     OgModuleModule,
-    OgServicesModule
+    OgServicesModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
