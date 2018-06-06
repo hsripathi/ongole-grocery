@@ -1,3 +1,11 @@
+== Drop the collection ===
+
+db.grocerycategories.drop();
+
+db.grocerycategories.find().pretty();
+
+
+
 db.grocerycategories.insertMany([   
    {
         "key": "fruits_veggies",

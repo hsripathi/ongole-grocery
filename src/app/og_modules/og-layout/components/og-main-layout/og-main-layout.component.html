@@ -1,25 +1,28 @@
-<div id="og-main-layout" fxLayout='column' > 
-    <nav id="og-header" fxLayout='row' fxLayoutAlign="start center" fxFlex="60px">
-     
-      <div id="og-header-left" fxFlex="20">
-          <a id="og-header-logo" class="og-btn"  href="#" mat-button>Ongole Fresh</a>          
-      </div>     
-      
-      <div id="og-header-search" fxFlex="60">
-        <input type="text" placeholder="Search">
-      </div>
-  
-      <div id="og-header-right" fxFlex="20" fxLayoutAlign="end center">
-        <button mat-icon-button >
-          <mat-icon >shopping_cart</mat-icon>
-        </button>
-      </div>
-  
-    </nav>
-  
-    <div id="og-content" fxLayout='column' fxFlex="100">
-      <router-outlet></router-outlet>  
+<div id="og-main-layout" fxLayout='column'>
+  <nav id="og-header" fxLayout='row' fxLayoutAlign="start center" fxFlex="60px">
+
+    <div id="og-header-left" fxFlex="20">
+      <a id="og-header-logo" class="og-btn" href="#" mat-button>Ongole Fresh</a>
     </div>
-  
-  
+
+    <div id="og-header-search" fxFlex="60">
+      <input type="text" placeholder="Search">
+    </div>
+
+    <div id="og-header-right" fxFlex="20" fxLayoutAlign="end center">
+      <button mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+    </div>
+
+  </nav>
+
+  <div id="og-content" fxLayout='column' fxFlex="100">
+    <ng-content>
+
+
+    </ng-content>
   </div>
+
+
+</div>

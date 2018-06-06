@@ -9,7 +9,7 @@ html,body
     font-size: 14px;
 }
 
-og-category-grid
+og-category-grid,app-og-category-details
 {
     height: 100%;
 }

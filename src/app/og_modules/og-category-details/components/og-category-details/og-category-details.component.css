@@ -1,0 +1,41 @@
+#og-category-details
+{
+    height: 100%;
+}
+
+#og-category-details .og-left-nav
+{
+    border-right: 1px solid #aaa;
+}
+
+#og-breadcrumb
+{
+    list-style: none;
+}
+
+.og-breadcrumb-item
+{
+    display: inline;
+    cursor: pointer;
+    font-weight: 700;
+    outline: none;
+}
+.og-breadcrumb-item-root
+{
+    font-weight: 400;
+}
+.og-breadcrumb-item:after
+{
+    color: #616161;
+    content: '\203a';
+    margin: 0 8px;
+}
+
+.og-bc-item-disable
+{
+    cursor:initial;
+}
+.og-bc-item-disable:after
+{
+    content:none;       
+}

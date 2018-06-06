@@ -9,5 +9,4 @@ export const OG_SERVICES_URI = {
     {
         return this.rootURL + "/" + this[ _methodName ].path;
     }
-
 }

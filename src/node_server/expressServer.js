@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require("mongoose");
 mongoose.connect('mongodb://127.0.0.1:27017/ongolefresh');
 
-app.listen(3000,function(){
+app.listen(3000, function () {
 	console.log('listening on 3000');
 })
 
@@ -15,19 +15,18 @@ var Schema = mongoose.Schema;
 var groceryCategory = new Schema({
 	"key": String,
 	"description": String,
-	"itemLogo": String	
+	"itemLogo": String
 })
-var groceryCatModel = mongoose.model('groceryCategories',groceryCategory);
+var groceryCatModel = mongoose.model('grocerycategories', groceryCategory);
 
-app.get('/grocery_categroy',function(req,res){
-	
-	 res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-	groceryCatModel.find(function(err,data)
-	{
-			 res.send(data)
+app.get('/grocery_categroy', function (req, res) {
+
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	groceryCatModel.find(function (err, data) {
+		res.send(data)
 	});
-	
-	 //res.send("Hellow Sripathi")
+
+	//res.send("Hellow Sripathi")
 });
