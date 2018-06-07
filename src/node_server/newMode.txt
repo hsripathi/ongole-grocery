@@ -1,0 +1,105 @@
+db.grocerycategories.insert(
+{
+	_id: "beverages",   
+   children:[
+   {
+		_id: "soft_drinks",
+		description:"Soft Drinks",
+	   children:[
+		   {
+				_id:"cans",
+				name:"Cans",
+				children:[]
+			},
+			{
+				_id:"pet_bottels",
+				name:"Pet Bottels",
+				children:[]
+			}
+		]
+	},
+	{
+		_id: "tea_coffee",
+		description:"Tea & Coffee",
+	   children:[
+		   {
+				_id:"tea",
+				name:"Tea",
+				children:[]
+			},
+			{
+				_id:"green_tea",
+				name:"Green Tea",
+				children:[]
+			},
+			{
+				_id:"coffee",
+				name:"Coffee",
+				children:[]
+			},
+			{
+				_id:"tea_bags",
+				name:"Tea Bags & Others",
+				children:[]
+			}
+		]
+	}
+	]
+})
+
+db.grocerycategories.insert(
+{
+	_id: "fruits_veggies",   
+   children:[
+   {
+		_id: "vegetables",
+		description:"Vegetables",
+	   children:[
+	   {
+			_id:"leafies",
+			name:"Leafies",
+			children:[]
+		},
+		{
+			_id:"green_veggies",
+			name:"Green Veggies",
+			children:[]
+		}]
+	},
+	{
+		_id: "fruits",
+		description:"Fruits",
+	   children:[
+	   {
+			_id:"apple",
+			name:"apple",
+			children:[]
+		},
+		{
+			_id:"oranges",
+			name:"Oranges",
+			children:[]
+		}]
+	}]
+})
+
+
+
+db.grocerycategories.insert(
+{
+	_id: "grocery_categories",
+	"description": "Grocery",	
+	children:[
+	{
+		"key": "fruits_veggies",
+		"description": "Fruits and Vegetables",
+		"itemLogo": "og_grocery_fruits_veggies.jpg",
+		children:["fruits_veggies"]
+	},
+	{
+		"key": "beverages",
+		"description": "Beverages",
+		"itemLogo": "og_grocery_fruits_veggies.jpg",
+		children:["beverages"]
+	}]
+})

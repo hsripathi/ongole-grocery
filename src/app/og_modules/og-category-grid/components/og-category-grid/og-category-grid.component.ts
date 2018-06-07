@@ -9,16 +9,17 @@ import { OG_SERVICES_URI } from '../../../../og_conf/og-services-conf';
 })
 export class OgCategoryGridComponent implements OnInit
 {
-  public ogGroceryCategory = new Array();
+  public ogGroceryCategory;//= new Array();
   constructor (public ogGroceryService: OgGroceryService) { }
 
   ngOnInit ()
   {
-    this.ogGroceryService.getGrocery(OG_SERVICES_URI.getURL("getGroceryCategroy"), this.callbackHandler.bind(this));
+    this.ogGroceryService.getGrocery(this.callbackHandler.bind(this));
   }
 
   public callbackHandler (_data)
   {
+    console.log(_data);
     this.ogGroceryCategory = _data;
   }
 

@@ -33,3 +33,43 @@ db.grocerycategories.insertMany([
         "itemLogo": "og_grocery_fruits_veggies.jpg"
     }
 ]);
+
+
+== New Model Data =============
+
+
+db.grocerycategories.insert(
+{
+	_id: "fruits_veggies",   
+   children:[
+   {
+		_id: "vegetables",
+		description:"Vegetables",
+	   children:[
+	   {
+			_id:"tomatoes",
+			name:"Tomatoes",
+			children:[]
+		},
+		{
+			_id:"onions",
+			name:"Onions",
+			children:[]
+		}]
+	}]
+})
+
+
+
+db.grocerycategories.insert(
+{
+	_id: "grocery_categories",
+	"description": "Grocery",	
+	children:[
+	{
+		"key": "fruits_veggies",
+		"description": "Fruits and Vegetables",
+		"itemLogo": "og_grocery_fruits_veggies.jpg",
+		children:["fruits_veggies"]
+	}]
+})
