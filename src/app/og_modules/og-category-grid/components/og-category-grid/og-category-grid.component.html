@@ -1,7 +1,8 @@
-<div id="og-category" fxLayout='column' fxFlex="100">
-  <h2 class="og-category-title">Grocery</h2>
+<div id="og-category" fxLayout='column' fxFlex="100" *ngIf="ogGroceryCategory">
+  <h2 class="og-category-title">{{ogGroceryCategory.description}}</h2>
   <div class="og-category-grid" fxLayout='row wrap'>
-    <div class="og-category-item" *ngFor="let grocery of ogGroceryCategory" fxLayout='row' fxLayoutAlign="center center" [routerLink]="['/',grocery.key]">
+    <div class="og-category-item" *ngFor="let grocery of ogGroceryCategory.children" fxLayout='row' fxLayoutAlign="center center"
+      [routerLink]="['/',grocery.key]">
       <div class="og-category-item-desc" fxFlex="40">
         {{grocery.description}}
       </div>

@@ -13,20 +13,30 @@ db.on('error', console.error.bind(console, 'connection error:'));
 var Schema = mongoose.Schema;
 
 var groceryCategory = new Schema({
-	"key": String,
+	"_id": String,
 	"description": String,
 	"itemLogo": String
 })
 var groceryCatModel = mongoose.model('grocerycategories', groceryCategory);
 
 app.get('/grocery_categroy', function (req, res) {
-
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type');
-	groceryCatModel.find(function (err, data) {
+
+	console.log(req.params);
+	groceryCatModel.findOne({ _id: "grocery_categories" }, function (err, data) {
 		res.send(data)
 	});
+});
 
-	//res.send("Hellow Sripathi")
+app.get('/grocery_categroy/:category_name', function (req, res) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+	console.log(req.params);
+	groceryCatModel.findOne({ _id: req.params.category_name }, function (err, data) {
+		res.send(data)
+	});
 });

@@ -1,14 +1,23 @@
 <div id="og-category-details" fxLayout='row'>
   <div class="og-left-nav" fxFlex="20">
 
-    LeftNav
+    <ul>
+      <li *ngFor="let product of activeCategoryProducts.children">
+        {{ product._id }}
+        <ul *ngFor="let items of product.children">
+          <li>
+            {{items.name}}
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
   <div class="og-content" fxFlex="80">
     <ul id="og-breadcrumb">
       <li class="og-breadcrumb-item og-breadcrumb-item-root" [routerLink]="['/']"> Home </li>
       <li [class.og-bc-item-disable]="counter < breadCrumbData.length" class="og-breadcrumb-item" *ngFor="let item of breadCrumbData;let counter=index;"
-        [routerLink]="[ '/',item.key] ">
+        [routerLink]="[ '/',item._id] ">
         {{item.title}}
       </li>
     </ul>
