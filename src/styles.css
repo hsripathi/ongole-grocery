@@ -5,11 +5,26 @@ html,body
     height: 100%;
     margin: 0px;
     background-color: #f9f9f9;
-    font-family: 'Roboto','Helvetica-neue',sans-serif;
-    font-size: 14px;
+    font-family: 'Roboto','Helvetica-neue',sans-serif;  
 }
 
 og-category-grid,app-og-category-details
 {
     height: 100%;
 }
+
+.og-product-panel .mat-expansion-panel-body
+{
+    padding: 0px !important;
+}
+
+.og-product-list-item .mat-button-focus-overlay
+{
+    background: none !important;
+}
+
+.mat-expansion-panel
+{
+    box-shadow: none !important;
+}
+

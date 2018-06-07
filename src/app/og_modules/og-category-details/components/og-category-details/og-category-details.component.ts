@@ -12,7 +12,8 @@ export class OgCategoryDetailsComponent implements OnInit
 {
   public breadCrumbData = new Array();
   public activeCategoryProducts = new Array();
-
+  private activeCategoryName;
+  private dummyProducts = [ 1, 2, 3, 4, 5, 6, 8, 123, 2312, 123123, 12321312, 12 ];
 
   constructor (private route: ActivatedRoute, private ogGroceryService: OgGroceryService)
   { }
@@ -21,10 +22,10 @@ export class OgCategoryDetailsComponent implements OnInit
   {
     this.route.paramMap.subscribe(data =>
     {
-      let activeCategory = data[ "params" ].categoryName;
-      this.breadCrumbData.push({ key: activeCategory, title: activeCategory });
+      this.activeCategoryName = data[ "params" ].categoryName;
+      this.breadCrumbData.push({ key: this.activeCategoryName, title: this.activeCategoryName });
 
-      this.ogGroceryService.getGroceryCategory(activeCategory, this.getGroceryCallbackHandler.bind(this));
+      this.ogGroceryService.getGroceryCategory(this.activeCategoryName, this.getGroceryCallbackHandler.bind(this));
     });
   }
 

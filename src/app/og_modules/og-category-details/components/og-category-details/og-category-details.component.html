@@ -1,7 +1,7 @@
 <div id="og-category-details" fxLayout='row'>
   <div class="og-left-nav" fxFlex="20">
 
-    <ul>
+    <!--<ul>
       <li *ngFor="let product of activeCategoryProducts.children">
         {{ product._id }}
         <ul *ngFor="let items of product.children">
@@ -10,7 +10,28 @@
           </li>
         </ul>
       </li>
-    </ul>
+    </ul> -->
+
+    
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let product of activeCategoryProducts.children" class="og-product-panel">
+        <mat-expansion-panel-header >
+          <mat-panel-title class="og-product-header-title">
+            {{ product._id }}
+          </mat-panel-title>         
+        </mat-expansion-panel-header>
+        <ul class="og-product-list" *ngFor="let items of product.children">
+          <li class="og-product-list-item">
+
+            <a [routerLink]="[ activeCategoryName,items._id] " mat-button >
+              <div class="og-product-title">{{items.name}}</div>
+           </a>
+          </li>
+        </ul>
+
+      </mat-expansion-panel> 
+    
+    </mat-accordion>
   </div>
 
   <div class="og-content" fxFlex="80">
@@ -21,5 +42,33 @@
         {{item.title}}
       </li>
     </ul>
+
+    <h2>{{activeCategoryProducts._id}}</h2>
+    
+        
+        <div id="og-responsive-grid" fxLayout='row wrap'>
+            <div class="og-responsive-grid-item og-category-item-card" fxFlex="22"  *ngFor="let items of dummyProducts">           
+            <mat-card class="example-card"  >
+              <mat-card-header>
+                <!--<div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title>Fruits & Veggies </mat-card-title>
+                <mat-card-subtitle>1kg - ₹100</mat-card-subtitle>
+              </mat-card-header>          
+              <img class="og-card-item-img" src="/assets/images/fruits_veggies.jpg">
+              <mat-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button class="og-cart-add-btn" color="primary">ADD TO CART</button>
+                
+              </mat-card-actions>
+            </mat-card>          
+          </div>       
+    
+        </div>
   </div>
 </div>
