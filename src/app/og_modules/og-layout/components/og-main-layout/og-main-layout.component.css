@@ -38,4 +38,6 @@
 #og-content
 {
     padding: 0px 30px;
+    max-width: 1400px;
+    align-self: center;
 }
