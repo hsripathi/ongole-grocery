@@ -1,4 +1,11 @@
 <div id="og-category" fxLayout='column' fxFlex="100" *ngIf="ogGroceryCategory">
+
+
+    <slideshow [imageUrls]="imagesArray" [autoPlay]="true" fxFlex="40" [minHeight]="'320px'" [showDots]="true" [showCaptions]="true"
+     [dotColor]="'#ffa500'"></slideshow>
+
+
+
   <h2 class="og-category-title">{{ogGroceryCategory.description}}</h2>
   <div class="og-category-grid" fxLayout='row wrap'>
     <div class="og-category-item" *ngFor="let grocery of ogGroceryCategory.children" fxLayout='row' fxLayoutAlign="center center"

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
 import { OgGroceryService } from '../../../../og_services/og-grocery/og-grocery.service';
 import { OG_SERVICES_URI } from '../../../../og_conf/og-services-conf';
+import { OG_LABEL_RESOURCES } from '../../../../og_conf/og-label-resources';;
 
 @Component({
   selector: 'app-og-category-details',
@@ -27,6 +28,11 @@ export class OgCategoryDetailsComponent implements OnInit
 
       this.ogGroceryService.getGroceryCategory(this.activeCategoryName, this.getGroceryCallbackHandler.bind(this));
     });
+  }
+
+  public getLabelDescription (_key)
+  {
+    return OG_LABEL_RESOURCES[ _key ];
   }
 
   public getGroceryCallbackHandler (_data)

@@ -28,3 +28,12 @@ og-category-grid,app-og-category-details
     box-shadow: none !important;
 }
 
+.slides
+{
+    background-size: contain !important;
+}
+
+slideshow
+{
+    background: #fff;
+}

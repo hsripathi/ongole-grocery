@@ -37,9 +37,16 @@
 
 #og-content
 {
-    padding: 0px 30px;
-    max-width: 1400px;
-    width:1450px;
+    padding: 0px 10px;    
     align-self: center;
     margin-top: 10px;
+}
+
+@media only screen and (min-width: 1400px) 
+{
+    #og-content
+    {
+        max-width: 1400px;
+        width:1450px;
+    }
 }

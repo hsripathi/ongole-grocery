@@ -1,5 +1,13 @@
-<div id="og-category-details" fxLayout='row'>
-  <div class="og-left-nav" fxFlex="20">
+<div fxLayout="row" class="og-product-desc" fxLayoutAlign="center center">      
+    <img class="og-product-desc-img"  fxFlex="50" width="100%" src="/assets/images/og_grocery_fruits_veggies.jpg">      
+<div fxFlex="50" class="og-product-desc-title">
+    {{getLabelDescription(activeCategoryProducts._id)}}
+</div>
+</div>
+
+
+<div id="og-category-details" fxLayout='row'>    
+  <div class="og-left-nav" fxFlex="25" fxFlex.md="30" fxHide.sm fxHide.xs>
 
     <!--<ul>
       <li *ngFor="let product of activeCategoryProducts.children">
@@ -13,6 +21,9 @@
     </ul> -->
 
     
+    <div class="og-active-category">
+      {{getLabelDescription(activeCategoryName)}}
+    </div>
     <mat-accordion>
       <mat-expansion-panel *ngFor="let product of activeCategoryProducts.children" class="og-product-panel">
         <mat-expansion-panel-header >
@@ -34,21 +45,18 @@
     </mat-accordion>
   </div>
 
-  <div class="og-content" fxFlex="80">
+  <div class="og-content" fxFlex="80" fxFlex.md="75" fxFlex.sm="100" fxFlex.xs="100">
+    
     <ul id="og-breadcrumb">
       <li class="og-breadcrumb-item og-breadcrumb-item-root" [routerLink]="['/']"> Home </li>
       <li [class.og-bc-item-disable]="counter < breadCrumbData.length" class="og-breadcrumb-item" *ngFor="let item of breadCrumbData;let counter=index;"
         [routerLink]="[ '/',item._id] ">
-        {{item.title}}
+        {{getLabelDescription(item.title)}}
       </li>
     </ul>
-
-    <h2>{{activeCategoryProducts._id}}</h2>
-    
-        
         <div id="og-responsive-grid" fxLayout='row wrap'>
-            <div class="og-responsive-grid-item og-category-item-card" fxFlex="22"  *ngFor="let items of dummyProducts">           
-            <mat-card class="example-card"  >
+            <div class="og-responsive-grid-item"  fxFlex="25" fxFlex.md="33.3"  fxFlex.sm="33.3" fxFlex.xs="100"  *ngFor="let items of dummyProducts">           
+            <mat-card class="og-category-item-card"  >
               <mat-card-header>
                 <!--<div mat-card-avatar class="example-header-image"></div> -->
                 <mat-card-title>Fruits & Veggies </mat-card-title>
