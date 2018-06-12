@@ -5,24 +5,27 @@
       <a id="og-header-logo" class="og-btn" href="#" mat-button>Ongole Fresh</a>
     </div>
 
-    <div id="og-header-search" fxFlex="60">
+    <div id="og-header-search" fxFlex="40">
       <input type="text" placeholder="Search">
     </div>
 
-    <div id="og-header-right" fxFlex="20" fxLayoutAlign="end center">
-      <button mat-icon-button>
-        <mat-icon>shopping_cart</mat-icon>
+    <div id="og-header-right" fxFlex="40" fxLayoutAlign="center center">
+
+      <button mat-button class="og-cart-details">
+        <mat-icon id="og-cart-icon">shopping_cart_outline</mat-icon>
+        <span id="og-cart-items-count">
+          {{getItemCount()}}
+        </span>
+        <span id="og-cart-price">
+          $23
+        </span>
       </button>
     </div>
-
   </nav>
 
-  <div id="og-content" fxLayout='column' fxFlex="100" >
+  <div id="og-content" fxLayout='column' fxFlex="100">
     <ng-content>
-
-
     </ng-content>
   </div>
-
 
 </div>

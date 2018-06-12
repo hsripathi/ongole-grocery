@@ -1,0 +1,32 @@
+<mat-card class="og-category-item-card">
+  <mat-card-header>
+    <!--<div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>Fruits & Veggies </mat-card-title>
+    <mat-card-subtitle>1kg - ₹100</mat-card-subtitle>
+  </mat-card-header>
+  <img class="og-card-item-img" src="/assets/images/fruits_veggies.jpg">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="og-cart-actions">
+    <button mat-raised-button class="og-cart-add-btn" color="primary" (click)="addToCart(product)" *ngIf="enableAddToCart;else cartUpdate">ADD TO CART</button>
+
+    <ng-template #cartUpdate>
+      <div class="og-cart-update" fxLayout="row" fxLayoutAlign="center center">
+        <button mat-icon-button fxFlex=" 20 " color="primary">
+          <mat-icon aria-label="Example icon-button with a heart icon ">remove_circle_outline</mat-icon>
+        </button>
+        <div fxFlex="60" class="cart-item-count-info">
+          <span class="items-count">{{product.quantity}}</span>
+          <span class="items-desc">in Cart</span>
+        </div>
+        <button mat-icon-button fxFlex="20" color="primary" (click)="addToCart(product)">
+          <mat-icon aria-label="Example icon-button with a heart icon">add_circle_outline</mat-icon>
+        </button>
+      </div>
+    </ng-template>
+  </mat-card-actions>
+</mat-card>

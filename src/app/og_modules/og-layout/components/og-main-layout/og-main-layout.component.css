@@ -8,14 +8,15 @@
     background-color: orange;   
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
     color:#fff;
+    max-width: 100%;
 }
 
 #og-header-logo
-{
-    font-size: 1.5em;
+{   
     font-weight: 500;
     color: inherit;
     line-height: 60px;   
+    font-size: 14px;
 }
 
 #og-header-search input
@@ -28,11 +29,6 @@
     box-sizing: border-box;
     outline: none;
     border-radius: 2px;
-}
-
-#og-header-right
-{
-    padding-right: 20px;
 }
 
 #og-content
@@ -49,4 +45,23 @@
         max-width: 1400px;
         width:1450px;
     }
+}
+
+.og-cart-details,#og-header-right
+{
+    height: 100%;  
+}
+
+#og-cart-icon
+{
+    margin-right: -13px;
+}
+#og-cart-items-count
+{
+    vertical-align: text-bottom;
+    background: red;
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 2px;
+    font-size: 10px;
 }

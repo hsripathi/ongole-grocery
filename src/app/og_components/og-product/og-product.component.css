@@ -1,0 +1,31 @@
+.og-cart-add-btn,.product-cart-updates
+{
+    width: 100%;
+}
+
+.og-card-item-img
+{
+    max-width: 100%;
+}
+
+.og-cart-update
+{
+    border: 1px solid #ddd;
+}
+
+.og-cart-actions
+{
+    min-height: 50px;
+}
+
+.cart-item-count-info
+{
+    text-align: center;
+    font-size: 14px;
+}
+
+.cart-item-count-info .items-count
+{
+    font-weight: 550;   
+    margin: 0px 10px;
+}

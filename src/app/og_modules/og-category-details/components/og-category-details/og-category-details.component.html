@@ -1,12 +1,12 @@
-<div fxLayout="row" class="og-product-desc" fxLayoutAlign="center center">      
-    <img class="og-product-desc-img"  fxFlex="50" width="100%" src="/assets/images/og_grocery_fruits_veggies.jpg">      
-<div fxFlex="50" class="og-product-desc-title">
+<div fxLayout="row" class="og-product-desc" fxLayoutAlign="center center">
+  <img class="og-product-desc-img" fxFlex="50" width="100%" src="/assets/images/og_grocery_fruits_veggies.jpg">
+  <div fxFlex="50" class="og-product-desc-title">
     {{getLabelDescription(activeCategoryProducts._id)}}
-</div>
+  </div>
 </div>
 
 
-<div id="og-category-details" fxLayout='row'>    
+<div id="og-category-details" fxLayout='row'>
   <div class="og-left-nav" fxFlex="25" fxFlex.md="30" fxHide.sm fxHide.xs>
 
     <!--<ul>
@@ -20,33 +20,33 @@
       </li>
     </ul> -->
 
-    
+
     <div class="og-active-category">
       {{getLabelDescription(activeCategoryName)}}
     </div>
     <mat-accordion>
       <mat-expansion-panel *ngFor="let product of activeCategoryProducts.children" class="og-product-panel">
-        <mat-expansion-panel-header >
+        <mat-expansion-panel-header>
           <mat-panel-title class="og-product-header-title">
             {{ product._id }}
-          </mat-panel-title>         
+          </mat-panel-title>
         </mat-expansion-panel-header>
         <ul class="og-product-list" *ngFor="let items of product.children">
           <li class="og-product-list-item">
 
-            <a [routerLink]="[ activeCategoryName,items._id] " mat-button >
+            <a [routerLink]="[ activeCategoryName,items._id] " mat-button>
               <div class="og-product-title">{{items.name}}</div>
-           </a>
+            </a>
           </li>
         </ul>
 
-      </mat-expansion-panel> 
-    
+      </mat-expansion-panel>
+
     </mat-accordion>
   </div>
 
   <div class="og-content" fxFlex="80" fxFlex.md="75" fxFlex.sm="100" fxFlex.xs="100">
-    
+
     <ul id="og-breadcrumb">
       <li class="og-breadcrumb-item og-breadcrumb-item-root" [routerLink]="['/']"> Home </li>
       <li [class.og-bc-item-disable]="counter < breadCrumbData.length" class="og-breadcrumb-item" *ngFor="let item of breadCrumbData;let counter=index;"
@@ -54,29 +54,21 @@
         {{getLabelDescription(item.title)}}
       </li>
     </ul>
-        <div id="og-responsive-grid" fxLayout='row wrap'>
-            <div class="og-responsive-grid-item"  fxFlex="25" fxFlex.md="33.3"  fxFlex.sm="33.3" fxFlex.xs="100"  *ngFor="let items of dummyProducts">           
-            <mat-card class="og-category-item-card"  >
-              <mat-card-header>
-                <!--<div mat-card-avatar class="example-header-image"></div> -->
-                <mat-card-title>Fruits & Veggies </mat-card-title>
-                <mat-card-subtitle>1kg - ₹100</mat-card-subtitle>
-              </mat-card-header>          
-              <img class="og-card-item-img" src="/assets/images/fruits_veggies.jpg">
-              <mat-card-content>
-                <p>
-                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                  bred for hunting.
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button mat-raised-button class="og-cart-add-btn" color="primary">ADD TO CART</button>
-                
-              </mat-card-actions>
-            </mat-card>          
-          </div>       
-    
-        </div>
+
+
+    <div id="og-responsive-grid" fxLayout='row wrap'>
+      <ng-template ngFor let-product [ngForOf]="activeCategoryProducts.children">
+
+        <ng-template ngFor let-items [ngForOf]="product.children">
+          <div class="og-responsive-grid-item" fxFlex="25" fxFlex.md="33.3" fxFlex.sm="33.3" fxFlex.xs="100" *ngIf="items.children ==0">
+            <div>
+              <og-product [product]="items" *ngIf="items.children == 0">
+              </og-product>
+            </div>
+          </div>
+        </ng-template>
+      </ng-template>
+
+    </div>
   </div>
 </div>
