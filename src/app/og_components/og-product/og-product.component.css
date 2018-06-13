@@ -29,3 +29,23 @@
     font-weight: 550;   
     margin: 0px 10px;
 }
+
+
+.og-cart-nav-product .mat-card-header
+{
+ display: none;
+
+}
+
+.og-cart-nav-product .mat-card-content
+{
+    width:75%;
+}
+.og-cart-nav-product .og-card-item-img
+{
+    width: 25%;
+}
+.og-cart-nav-product .mat-card-content,.og-cart-nav-product .og-card-item-img
+{
+    display: inline-block;
+}

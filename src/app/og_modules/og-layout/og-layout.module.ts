@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { OgMainLayoutComponent } from './components/og-main-layout/og-main-layout.component';
 import { MaterialFormModule } from '../material-form/material-form.module';
 import { OgCategoryGridModule } from '../og-category-grid/og-category-grid.module';
-import { OgCartNavComponent } from './../../og_components/og-cart-nav/og-cart-nav.component';
+
+import { OgComponentsModule } from '../../og_components/og-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialFormModule,
-    OgCategoryGridModule
+    OgCategoryGridModule,
+    OgComponentsModule
   ],
-  declarations: [ OgMainLayoutComponent, OgCartNavComponent ],
+  declarations: [ OgMainLayoutComponent ],
   exports: [ OgMainLayoutComponent ]
 })
 export class OgLayoutModule { }

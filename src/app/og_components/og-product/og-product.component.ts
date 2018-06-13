@@ -36,11 +36,21 @@ export class OgProductComponent implements OnInit
     {
       _product[ "quantity" ] = 1;
     }
-
-
     this.ogCartService.addProductToCart(_product);
   }
 
+  public removeProductFromCart (_product)
+  {
+    this.ogCartService.removeProductFromCart(_product);
+
+    if (_product.quantity < 1)
+    {
+      this.enableAddToCart = true;
+    }
+  }
+
   @Input() product: string;
+
+  @Input() className: string;
 
 }

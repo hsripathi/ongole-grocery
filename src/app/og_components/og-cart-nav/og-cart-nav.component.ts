@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OgCartService } from '../../og_services/og-cart/og-cart.service';
+import { OgProductComponent } from '../og-product/og-product.component';
 
 @Component({
   selector: 'og-cart-nav',
@@ -9,12 +10,29 @@ import { OgCartService } from '../../og_services/og-cart/og-cart.service';
 export class OgCartNavComponent implements OnInit
 {
   public cartProducts;
-  constructor (public ogCartService: OgCartService) { }
+  public cartProductKeys = [];
+  constructor (public ogCartService: OgCartService) 
+  {
+    this.ogCartService.cartSubject.subscribe(this.updateSubscriberDataHandler.bind(this));
+  }
+
+  public updateSubscriberDataHandler (_data)
+  {
+    this.cartProducts = _data;
+
+    for (let key in this.cartProducts)
+    {
+      if (key != "cartMetaData")
+        this.cartProductKeys.push(key);
+    }
+    console.log(this.cartProducts);
+  }
 
   ngOnInit ()
   {
-    this.cartProducts = this.ogCartService.getCartProductList();
-    console.log(this.cartProducts)
+
   }
+
+
 
 }

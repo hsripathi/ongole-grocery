@@ -36,9 +36,11 @@ export class OgMainLayoutComponent implements OnInit
   public updateSubscriberDataHandler (_data)
   {
     this.cartProdcutDetails = _data;
-    this.cartItemsCount = Object.keys(this.cartProdcutDetails).length;
+    // this.cartItemsCount = Object.keys(this.cartProdcutDetails).length;
+    this.cartItemsCount = _data[ "cartMetaData" ][ "totalItemsCount" ];
     console.log(this.cartProdcutDetails);
   }
+
   public getItemCount ()
   {
     console.log(this.cartItemsCount)

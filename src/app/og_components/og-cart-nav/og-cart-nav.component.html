@@ -1,6 +1,6 @@
 <div id="og-cart-nav" fxLayout='column'>
   <div id="og-cart-nav-header" fxLayout='row' fxLayoutAlign="center center" fxFlex="50px">
-    <div og-cart-nav-header-title fxFlex="80">My Cart</div>
+    <div og-cart-nav-header-title fxFlex="80">My Cart <span *ngIf="cartProducts && cartProducts.cartMetaData.totalItemsCount > 0">({{cartProducts.cartMetaData.totalItemsCount}} Items)</span></div>
     <button mat-icon-button (click)="close('toggle button')">
       <mat-icon>close</mat-icon>
     </button>
@@ -24,14 +24,8 @@
       </div>
 
       <div class="og-cart-nav-products" fxFlex="100">
-        <div class="og-cart-item" fxLayout='row'>
-          <div fxFlex="30">
-            Image
-          </div>
-          <div fxFlex="70">
-            Data
-          </div>
-        </div>
+        <og-product [product]="cartProducts[productKey]" className="og-cart-nav-product" *ngFor="let productKey of cartProductKeys">
+        </og-product>
       </div>
     </div>
     <div id="og-cart-nav-footer" fxFlex="60px" fxLayoutAlign="end end">
