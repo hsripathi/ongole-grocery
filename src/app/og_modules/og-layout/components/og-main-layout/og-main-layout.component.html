@@ -1,4 +1,4 @@
-<div id="og-main-layout" fxLayout='column'>
+<!--<div id="og-main-layout" fxLayout='column'>
   <nav id="og-header" fxLayout='row' fxLayoutAlign="start center" fxFlex="60px">
 
     <div id="og-header-left" fxFlex="20">
@@ -29,3 +29,49 @@
   </div>
 
 </div>
+
+-->
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')" id="og-main-layout" fxLayout='column'>
+
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose position="end">
+    <!--<p>
+      <button mat-button (click)="close('toggle button')">Toggle</button>
+    </p> -->
+    <og-cart-nav></og-cart-nav>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content id="og-main-layout" fxLayout='column'>
+    <!--  <p>
+      <button mat-button (click)="sidenav.open()">Open</button>
+    </p> -->
+
+    <nav id="og-header" fxLayout='row' fxLayoutAlign="start center" fxFlex="60px">
+
+      <div id="og-header-left" fxFlex="20">
+        <a id="og-header-logo" class="og-btn" href="#" mat-button>Ongole Fresh</a>
+      </div>
+
+      <div id="og-header-search" fxFlex="60">
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div id="og-header-right" fxLayoutAlign="center center">
+        <button mat-button class="og-cart-details" (click)="sidenav.open()">
+          <mat-icon id="og-cart-icon">shopping_cart_outline</mat-icon>
+          <span id="og-cart-items-count">
+            {{getItemCount()}}
+          </span>
+          <span id="og-cart-price">
+            $23
+          </span>
+        </button>
+      </div>
+    </nav>
+    <div id="og-content" fxLayout='column' fxFlex="100">
+      <ng-content>
+      </ng-content>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

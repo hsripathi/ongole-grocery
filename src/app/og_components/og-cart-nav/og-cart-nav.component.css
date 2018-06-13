@@ -1,0 +1,69 @@
+
+#og-cart-nav
+{
+    width:415px;
+    background: #f9f9f9;
+    height: 100%;
+}
+
+#og-cart-nav-header
+{
+    background-color: orange;
+    color: #fff;
+}
+
+#og-cart-nav-price 
+{
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.delivery-price
+{
+    color: red;
+}
+
+.total-price
+{
+    font-weight: 550;
+}
+
+.og-cart-nav-price-info
+{
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.og-cart-nav-products .og-cart-item
+{
+    min-height: 100px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 20px;
+}
+
+#og-cart-nav-footer button
+{
+    width:100%;
+    margin: 10px;
+}
+
+.og-cart-checkout-btn
+{
+    text-align: left;
+    min-height: 45px;
+}
+.og-cart-checkout-btn-price
+{
+    float: right;
+}
+
+#og-cart-nav-content-body
+{
+    overflow: hidden;
+}
+
+#og-cart-nav-content-body:hover
+{
+    overflow: auto;
+}

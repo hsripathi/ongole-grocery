@@ -1,0 +1,46 @@
+<div id="og-cart-nav" fxLayout='column'>
+  <div id="og-cart-nav-header" fxLayout='row' fxLayoutAlign="center center" fxFlex="50px">
+    <div og-cart-nav-header-title fxFlex="80">My Cart</div>
+    <button mat-icon-button (click)="close('toggle button')">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div id="og-cart-nav-content" fxLayout='column' fxFlex="100">
+    <div fxFlex="100" id="og-cart-nav-content-body">
+      <div id="og-cart-nav-price">
+        <div class="og-cart-nav-price-info" fxLayout='row' fxLayoutAlign="start center">
+          <span class="title" fxFlex="80">Sub Total </span>
+          <span class="price">$ 2000</span>
+        </div>
+        <div class="og-cart-nav-price-info" fxLayout='row' fxLayoutAlign="start center">
+          <span class="title" fxFlex="80">Delivery Charges</span>
+          <span class="price  delivery-price">$ 10</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="og-cart-nav-price-info" fxLayout='row' fxLayoutAlign="start center">
+          <span class="title" fxFlex="80">Total </span>
+          <span class="price total-price">$ 21000</span>
+        </div>
+      </div>
+
+      <div class="og-cart-nav-products" fxFlex="100">
+        <div class="og-cart-item" fxLayout='row'>
+          <div fxFlex="30">
+            Image
+          </div>
+          <div fxFlex="70">
+            Data
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="og-cart-nav-footer" fxFlex="60px" fxLayoutAlign="end end">
+      <button mat-raised-button color="primary" class="og-cart-checkout-btn">
+        <mat-icon id="og-cart-icon">exit_to_app</mat-icon>
+        CheckOut
+        <span class="og-cart-checkout-btn-price">$333
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

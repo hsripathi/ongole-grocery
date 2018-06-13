@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { OgCartService } from '../../../../og_services/og-cart/og-cart.service';
 import { OgProduct } from '../../../../og_services/og-cart/entities/og-product';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'og-main-layout',
@@ -12,14 +13,24 @@ export class OgMainLayoutComponent implements OnInit
 {
   public cartProdcutDetails;
   public cartItemsCount = 0;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  reason = '';
+
   constructor (public ogCartServ: OgCartService) 
   {
     this.ogCartServ.cartSubject.subscribe(this.updateSubscriberDataHandler.bind(this))
 
   }
-  
+
   ngOnInit ()
   {
+  }
+
+  close (reason: string)
+  {
+    this.reason = reason;
+    this.sidenav.close();
   }
 
   public updateSubscriberDataHandler (_data)
