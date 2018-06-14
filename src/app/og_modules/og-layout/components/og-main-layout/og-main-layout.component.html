@@ -48,16 +48,20 @@
 
     <nav id="og-header" fxLayout='row' fxLayoutAlign="start center" fxFlex="60px">
 
-      <div id="og-header-left" fxFlex="20">
-        <a id="og-header-logo" class="og-btn" href="#" mat-button>Ongole Fresh</a>
+      <div id="og-header-left" fxFlex="30" fxFlex.xs="40">
+        <a id="og-header-logo" class="og-btn" href="#" mat-button>
+          Ongole
+          <span id="og-logo-sub-title">Fresh</span>
+        </a>
       </div>
 
-      <div id="og-header-search" fxFlex="60">
-        <input type="text" placeholder="Search">
+      <div id="og-header-search" fxFlex="40">
+        <input id="og-header-main-search" type="text" placeholder="Search">
       </div>
 
-      <div id="og-header-right" fxLayoutAlign="center center">
-        <button mat-button class="og-cart-details" (click)="sidenav.open()">
+      <div id="og-header-right" fxFlex="30" fxLayoutAlign="center center" fxLayout='row'>
+
+        <button mat-button class="og-cart-details" (click)="sidenav.open()" fxLayoutAlign="center center">
           <mat-icon id="og-cart-icon">shopping_cart_outline</mat-icon>
           <span id="og-cart-items-count">
             {{cartItemsCount}}
@@ -66,6 +70,7 @@
             $23
           </span>
         </button>
+
       </div>
     </nav>
     <div id="og-content" fxLayout='column' fxFlex="100">

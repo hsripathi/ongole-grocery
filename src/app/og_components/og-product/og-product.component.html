@@ -1,32 +1,61 @@
-<mat-card class="og-category-item-card" [class] ="className">
-    <mat-card-header >
-      <!--<div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title>Fruits & Veggies </mat-card-title>
-      <mat-card-subtitle>1kg - ₹100</mat-card-subtitle>
-    </mat-card-header>
-    <img class="og-card-item-img" src="/assets/images/fruits_veggies.jpg">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
-        very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions class="og-cart-actions" *ngIf="className != 'og-cart-nav-product'">
-      <button mat-raised-button class="og-cart-add-btn" color="primary" (click)="addToCart(product)" *ngIf="enableAddToCart;else cartUpdate">ADD TO CART</button>
-  
-      <ng-template #cartUpdate>
-        <div class="og-cart-update" fxLayout="row" fxLayoutAlign="center center">
-          <button mat-icon-button fxFlex=" 30 " color="primary" (click)="removeProductFromCart(product)">
-            <mat-icon aria-label="Example icon-button with a heart icon " >remove_circle_outline</mat-icon>
-          </button>
-          <div fxFlex="40" class="cart-item-count-info">
-            <span class="items-count">{{product.quantity}}</span>
-            <span class="items-desc">in Cart</span>
-          </div>
-          <button mat-icon-button fxFlex="30" color="primary" (click)="addToCart(product)">
-            <mat-icon aria-label="Example icon-button with a heart icon">add_circle_outline</mat-icon>
-          </button>
+<mat-card class="og-category-item-card" [ngClass]="className">
+  <mat-card-header>
+    <!--<div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title>Fruits & Veggies </mat-card-title>
+    <mat-card-subtitle>1kg - ₹100</mat-card-subtitle>
+  </mat-card-header>
+  <img class="og-card-item-img" src="/assets/images/fruits_veggies.jpg">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="og-cart-actions" *ngIf="className != 'og-cart-nav-product';else ogCartNavActions">
+    <button mat-raised-button class="og-cart-add-btn" color="primary" (click)="addToCart(product)" *ngIf="enableAddToCart;else cartUpdate">ADD TO CART</button>
+
+    <ng-template #cartUpdate>
+      <div class="og-cart-update" fxLayout="row" fxLayoutAlign="center center">
+        <button mat-icon-button fxFlex=" 30 " color="primary" (click)="removeProductFromCart(product)">
+          <mat-icon aria-label="Example icon-button with a heart icon ">remove_circle_outline</mat-icon>
+        </button>
+        <div fxFlex="40" class="cart-item-count-info">
+          <span class="items-count">{{product.quantity}}</span>
+          <span class="items-desc">in Cart</span>
         </div>
-      </ng-template>
-    </mat-card-actions>
-  </mat-card>
+        <button mat-icon-button fxFlex="30" color="primary" (click)="addToCart(product)">
+          <mat-icon aria-label="Example icon-button with a heart icon">add_circle_outline</mat-icon>
+        </button>
+      </div>
+    </ng-template>
+  </mat-card-actions>
+  <ng-template #ogCartNavActions>
+    <div class="og-cart-nav-actions" fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex=" 10 ">
+
+
+      </div>
+      <div fxFlex=" 70 " fxLayout="row" fxLayoutAlign="center center">
+        <button mat-icon-button color="primary" (click)="removeProductFromCart(product)">
+          <mat-icon aria-label="Example icon-button with a heart icon ">remove_circle_outline</mat-icon>
+        </button>
+        <div class="cart-item-count-info">
+          <span class="items-count">{{product.quantity}}</span>
+        </div>
+        <button mat-icon-button color="primary" (click)="addToCart(product)">
+          <mat-icon aria-label="Example icon-button with a heart icon">add_circle_outline</mat-icon>
+        </button>
+        <div id="og-cart-nav-product-price">
+          <i class="material-icons icon">
+            close
+          </i>
+          $222
+        </div>
+      </div>
+      <div fxFlex=" 20 " fxLayoutAlign="end center">
+        $200
+      </div>
+    </div>
+  </ng-template>
+
+</mat-card>

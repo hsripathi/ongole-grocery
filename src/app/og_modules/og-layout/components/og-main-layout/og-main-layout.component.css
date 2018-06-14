@@ -9,14 +9,31 @@
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
     color:#fff;
     max-width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
 }
+ #og-header-main-search
+ {
+    width:100px;
+ }
+
 
 #og-header-logo
 {   
     font-weight: 500;
     color: inherit;
     line-height: 60px;   
-    font-size: 14px;
+    font-size: 25px;
+}
+
+#og-logo-sub-title
+{
+    color: #2cb12c;
+    font-size: 15px;    
+    vertical-align: unset;
+    font-weight: 600;
+
 }
 
 #og-header-search input
@@ -35,7 +52,7 @@
 {
     padding: 0px 10px;    
     align-self: center;
-    margin-top: 10px;
+    margin-top: 70px;
 }
 
 @media only screen and (min-width: 1400px) 

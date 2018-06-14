@@ -60,12 +60,16 @@
 
 #og-cart-nav-content-body
 {
-    overflow: hidden;
-}
-
-#og-cart-nav-content-body:hover
-{
     overflow: auto;
 }
 
 
+
+.og-cart-nav-empty-cart
+{
+    height: 100%;
+}
+
+.og-cart-nav-empty-cart img{
+    width: 250px;
+}

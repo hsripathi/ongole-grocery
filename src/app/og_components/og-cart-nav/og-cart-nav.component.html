@@ -1,12 +1,14 @@
 <div id="og-cart-nav" fxLayout='column'>
   <div id="og-cart-nav-header" fxLayout='row' fxLayoutAlign="center center" fxFlex="50px">
-    <div og-cart-nav-header-title fxFlex="80">My Cart <span *ngIf="cartProducts && cartProducts.cartMetaData.totalItemsCount > 0">({{cartProducts.cartMetaData.totalItemsCount}} Items)</span></div>
+    <div og-cart-nav-header-title fxFlex="80">My Cart
+      <span *ngIf="cartProducts && cartProducts.cartMetaData.totalItemsCount > 0">({{cartProducts.cartMetaData.totalItemsCount}} Items)</span>
+    </div>
     <button mat-icon-button (click)="close('toggle button')">
       <mat-icon>close</mat-icon>
     </button>
   </div>
   <div id="og-cart-nav-content" fxLayout='column' fxFlex="100">
-    <div fxFlex="100" id="og-cart-nav-content-body">
+    <div fxFlex="100" id="og-cart-nav-content-body" fxLayout='column'>
       <div id="og-cart-nav-price">
         <div class="og-cart-nav-price-info" fxLayout='row' fxLayoutAlign="start center">
           <span class="title" fxFlex="80">Sub Total </span>
@@ -24,8 +26,16 @@
       </div>
 
       <div class="og-cart-nav-products" fxFlex="100">
-        <og-product [product]="cartProducts[productKey]" className="og-cart-nav-product" *ngFor="let productKey of cartProductKeys">
-        </og-product>
+        <ng-container *ngIf="cartProductKeys.length!=0;else emtpyCart;">
+          <og-product [product]="cartProducts[productKey]" className="og-cart-nav-product" *ngFor="let productKey of cartProductKeys">
+          </og-product>
+        </ng-container>
+        <ng-template #emtpyCart>
+          <div class="og-cart-nav-empty-cart" fxLayout="column" fxLayoutAlign="center center">
+            <img fxFlex="150px" src="/assets/images/empty-cart.png">
+          </div>
+        </ng-template>
+
       </div>
     </div>
     <div id="og-cart-nav-footer" fxFlex="60px" fxLayoutAlign="end end">

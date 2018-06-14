@@ -51,7 +51,7 @@ export class OgCategoryDetailsComponent implements OnInit
     cartProduct.setProductName(_product[ "name" ]);
     cartProduct.setProductPrice("10");
     cartProduct.setProductQuantity("1");
-    
+
     this.ogCartService.addProductToCart(cartProduct)
   }
 

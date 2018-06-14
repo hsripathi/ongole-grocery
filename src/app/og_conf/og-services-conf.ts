@@ -1,5 +1,5 @@
 export const OG_SERVICES_URI = {
-    rootURL: "http://localhost:3000",
+    rootURL: "http://shanumanthu-dt.ad.linedata.com:3000",
 
     getGroceryCategroy: {
         path: "grocery_categroy"
