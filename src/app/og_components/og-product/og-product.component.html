@@ -1,16 +1,16 @@
 <mat-card class="og-category-item-card" [ngClass]="className">
   <mat-card-header>
     <!--<div mat-card-avatar class="example-header-image"></div> -->
-    <mat-card-title>Fruits & Veggies </mat-card-title>
+    <mat-card-title>{{product.name}} </mat-card-title>
     <mat-card-subtitle>1kg - ₹100</mat-card-subtitle>
   </mat-card-header>
   <img class="og-card-item-img" src="/assets/images/fruits_veggies.jpg">
-  <mat-card-content>
+  <!--<mat-card-content>
     <p>
       The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
       very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
     </p>
-  </mat-card-content>
+  </mat-card-content>-->
   <mat-card-actions class="og-cart-actions" *ngIf="className != 'og-cart-nav-product';else ogCartNavActions">
     <button mat-raised-button class="og-cart-add-btn" color="primary" (click)="addToCart(product)" *ngIf="enableAddToCart;else cartUpdate">ADD TO CART</button>
 

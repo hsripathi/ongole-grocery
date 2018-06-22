@@ -1,0 +1,58 @@
+
+== Drop the collection ===
+
+1. use ongolefresh 
+
+2. db.grocerycategories.drop();
+
+3. db.grocerycategories.find().pretty();
+
+
+db.grocerycategories.insert(
+{
+	_id: "ofCategories",  
+	parent:null
+});
+
+==Create a Index for parent ==
+db.grocerycategories.createIndex( { parent: 1 } );
+
+== Query the document with the parent name ==
+
+db.grocerycategories.find( { parent: "ofCategories" } );
+
+
+db.grocerycategories.insert(
+{
+	_id: "fruits_veggies",
+	description: "Fruits and Vegetables",
+    itemLogo: "og_grocery_fruits_veggies.jpg",
+	parent:"ofCategories"
+});
+
+db.grocerycategories.insert(
+{
+	_id: "beverages",
+	description: "Beverages",
+    "itemLogo": "og_beverages.png",
+	parent:"ofCategories"
+});
+
+db.grocerycategories.insert(
+{
+	_id: "baby_kids",
+	description: "Baby and kids",
+    "itemLogo": "og_baby_kids.jpg",
+	parent:"ofCategories"
+});
+
+db.grocerycategories.insert(
+{
+	_id: "grocery_staples",
+	description: "Grocery & Staples",
+    "itemLogo": "og_grocery_staples.png",
+	parent:"ofCategories"
+});
+
+
+------------------------------------------------------------------------------------------------------------------

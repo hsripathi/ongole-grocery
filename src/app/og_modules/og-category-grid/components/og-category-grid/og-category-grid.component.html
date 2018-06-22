@@ -1,21 +1,24 @@
 <div id="og-category" fxLayout='column' fxFlex="100" *ngIf="ogGroceryCategory">
 
 
-    <slideshow [imageUrls]="imagesArray" [autoPlay]="true" fxFlex="40" [minHeight]="'320px'" [showDots]="true" [showCaptions]="true"
-     [dotColor]="'#ffa500'"></slideshow>
+  <slideshow [imageUrls]="imagesArray" [autoPlay]="true" fxFlex="40" [minHeight]="'320px'" [showDots]="true" [showCaptions]="true"
+    [dotColor]="'#ffa500'"></slideshow>
 
 
+  <h2 class="og-category-title">Grocery Categories</h2>
 
-  <h2 class="og-category-title">{{ogGroceryCategory.description}}</h2>
   <div class="og-category-grid" fxLayout='row wrap'>
-    <div class="og-category-item" *ngFor="let grocery of ogGroceryCategory.children" fxLayout='row' fxLayoutAlign="center center"
-      [routerLink]="['/',grocery.key]">
-      <div class="og-category-item-desc" fxFlex="40">
-        {{grocery.description}}
+    <div class="og-category-item" *ngFor="let ogCategory of ogGroceryCategory" fxLayout='row' [routerLink]="['/',ogCategory._id]"
+      fxFlex.xl="32" fxFlex.lg="32" fxFlex.md="32" fxFlex.sm="48" fxFlex.xs="100">
+      <div class="og-category-item-desc" fxLayout='column' fxFlex="60" fxLayoutAlign="center start">
+        <div class="title"> {{ogCategory.description}}</div>
+        <div class="sub-title"> This is a sub title of the {{ogCategory.description}} . This is also place holder of the sub title .</div>
+
       </div>
-      <div class="og-category-item-img" fxFlex="60">
-        <img src="/assets/images/{{grocery.itemLogo}}">
+      <div class="og-category-item-img" fxFlex="40">
+        <img src="/assets/images/categories/{{ogCategory.itemLogo}}">
       </div>
     </div>
   </div>
+
 </div>

@@ -1,3 +1,12 @@
+== Drop the collection ===
+
+1. use ongolefresh 
+
+2. db.grocerycategories.drop();
+
+3. db.grocerycategories.find().pretty();
+
+
 db.grocerycategories.insert(
 {
 	_id: "beverages",   
@@ -6,16 +15,16 @@ db.grocerycategories.insert(
 		_id: "soft_drinks",
 		description:"Soft Drinks",
 	   children:[
-		   {
-				_id:"cans",
-				name:"Cans",
-				children:[]
-			},
-			{
-				_id:"pet_bottels",
-				name:"Pet Bottels",
-				children:[]
-			}
+	   {
+			_id:"cans",
+			name:"Cans",
+			children:[]
+		},
+		{
+			_id:"pet_bottels",
+			name:"Pet Bottels",
+			children:[]
+		}
 		]
 	},
 	{
@@ -56,13 +65,26 @@ db.grocerycategories.insert(
 		description:"Vegetables",
 	   children:[
 	   {
-			_id:"leafies",
-			name:"Leafies",
-			children:[]
+			_id:"tomatoes",
+			name:"Tomatoes",
+			productPrice:10,
+			unit:1,
+			measure:"kg",
+			commision:"5",
+			itemLogo: "og_tomatoes.jpg"		
+		},
+		{
+			_id:"onions",
+			name:"Onions",
+			productPrice:20,
+			unit:1,
+			measure:"kg",
+			commision:"5",
+			itemLogo: "og_onions.jpg"			
 		},
 		{
 			_id:"green_veggies",
-			name:"Green Veggies",
+			name:"Green Veggies",			
 			children:[]
 		}]
 	},
@@ -73,11 +95,6 @@ db.grocerycategories.insert(
 	   {
 			_id:"apple",
 			name:"apple",
-			children:[]
-		},
-		{
-			_id:"oranges",
-			name:"Oranges",
 			children:[]
 		}]
 	}]

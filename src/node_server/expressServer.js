@@ -24,8 +24,9 @@ app.get('/grocery_categroy', function (req, res) {
 	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
 	res.header('Access-Control-Allow-Headers', 'Content-Type');
 
-	console.log(req.params);
-	groceryCatModel.findOne({ _id: "grocery_categories" }, function (err, data) {
+	groceryCatModel.find({ parent: "ofCategories" }, function (err, data) {
+
+		console.log(data)
 		res.send(data)
 	});
 });
